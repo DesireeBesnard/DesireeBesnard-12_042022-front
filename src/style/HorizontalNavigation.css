@@ -1,0 +1,24 @@
+.header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px;
+}
+
+.header nav {
+    width: 700px;
+    margin: auto;
+}
+
+.header a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding-left: 100px;
+}
+
+.header img {
+    width: 178px;
+    height: auto;
+}
