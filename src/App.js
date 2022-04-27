@@ -13,55 +13,63 @@ function App() {
     const url = window.location.href.split("/")
     const userId = url[url.length -1]
 
-
     const [mainData, setMainData] = useState([])
     const [activity, setActivity] = useState([])
     const [averageSessions, setAverageSessions] = useState([])
     const [performance, setPerformance] = useState([])
 
+
     useEffect(() => {
         getMainData(userId)
             .then(response => {
+                console.log(response)
                 setMainData(response)
             })
             .catch((err) => console.log(err))
         
         getActivity(userId)
             .then(response => {
+                console.log(response)
                 setActivity(response)
             })
             .catch((err) => console.log(err))
     
         getAverageSessions(userId)
             .then(response => {
+                console.log(response)
                 setAverageSessions(response)
             })
             .catch((err) => console.log(err))
 
         getPerformance(userId)
             .then(response => {
+                console.log(response)
                 setPerformance(response)
             })
             .catch((err) => console.log(err))
-    }, [])
 
-    /*
-
-    */
+    }, [userId])
     
-    return (
-        <div className="App"> 
-            <NavBar/>
-            <SideBar/>
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/:id" element={<Home />} />
-                <Route path="/profil" element={<Profil />}/>
-                <Route path="/settings" element={<Settings />}/>
-                <Route path="/community" element={<Community />}/>
-            </Routes>
-        </div>
-    )
+
+    if(mainData.length === 0) { 
+        return <div> Loading ...</div>
+    } else {
+        return (
+            <div className="App"> 
+                <NavBar/>
+                <SideBar/>
+                <Routes>
+                    <Route exact path="/" element={<Home mainData={mainData} activity={activity} averageSessions={averageSessions} performance={performance}/>} />
+                    <Route exact path="/:id" element={<Home mainData={mainData} activity={activity} averageSessions={averageSessions} performance={performance}/>} />
+                    <Route path="/profil" element={<Profil />}/>
+                    <Route path="/settings" element={<Settings />}/>
+                    <Route path="/community" element={<Community />}/>
+                </Routes>
+            </div>
+        )
+    }
+
+
 }
 
 export default App
