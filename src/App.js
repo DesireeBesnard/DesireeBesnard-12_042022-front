@@ -52,7 +52,7 @@ function App() {
 
         getUserActivities(id)
             .then(response => {
-                //console.log("activities", response)
+                console.log("activities", response)
                 setActivities(response)
             })
             .catch((err) => console.log(err))

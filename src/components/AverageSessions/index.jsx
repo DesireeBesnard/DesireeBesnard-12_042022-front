@@ -4,23 +4,21 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 function AverageSessions(props) {
 
 
-  function CustomTooltip({active, payload}) {
-    if(active) {
-      return (
-        <div className='tooltip'>
-            <p>{payload[0].payload.sessionLength}min</p>
-        </div>
-      )
-    }
-    return null
-  }
-
-  
-
   if (props.data.data) {
 
-    let data = props.data.data.sessions
+    const data = props.data.data.sessions
     const days = ["L", "M", "M", "J", "V", "S", "D"]
+
+    function CustomTooltip({active, payload}) {
+      if(active) {
+        return (
+          <div className='tooltip'>
+              <p>{payload[0].payload.sessionLength}min</p>
+          </div>
+        )
+      }
+      return null
+    }
 
     for (let i = 0; i < data.length; i++) {
       const session = data[i]
