@@ -67,7 +67,7 @@ function App() {
 
     }, [id])
 
-    if(mainData.length === 0) { 
+    if(((mainData.length) === 0)&&(averageSessions.length === 0)) { 
         return <div> Loading ...</div>
     } else {
         return (
