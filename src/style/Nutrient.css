@@ -1,0 +1,33 @@
+.nutrient {
+    display: flex;
+    padding: 35px;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+}
+
+.nutrient:not(.nutrient:last-child) {
+    margin-bottom: 39px;
+}
+
+.nutrient img {
+    width: 60px;
+    height: 60px;
+}
+
+.nutrient > div {
+    margin: auto auto auto 24px;
+}
+
+.nutrient p {
+    margin: 0;
+}
+
+.nutrient p:first-child {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nutrient p:last-child {
+    font-size: 14px;
+    color: #74798C;
+} 

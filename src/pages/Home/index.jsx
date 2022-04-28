@@ -38,10 +38,10 @@ function Home(props) {
           <p>{greetings}</p>
           <div className='innerContent'>
             <div>
-              <div>
+              <div className='dailyActivity'>
                 <DailyActivity data={activity} />
               </div>
-              <div>
+              <div className='performance'>
                 <AverageSessions data={averageSessions} />
                 <Activities data={activities} />
                 <Score data={todayScore} />

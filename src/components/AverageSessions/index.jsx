@@ -26,7 +26,7 @@ function AverageSessions(props) {
     }
 
     return (
-      <ResponsiveContainer width="50%" aspect={3}>
+      <ResponsiveContainer width="33%" height="100%">
         <LineChart
           width={500}
           height={300}
@@ -38,7 +38,7 @@ function AverageSessions(props) {
             bottom: 5,
           }}
         >
-          <XAxis axisLine={false} tickLine={false} dataKey="day" />
+          <XAxis axisLine={false} tickLine={false} dataKey="day" margin-top="50px"/>
           <Tooltip content={<CustomTooltip />} />
           <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
         </LineChart>

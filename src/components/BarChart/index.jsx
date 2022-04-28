@@ -17,7 +17,7 @@ function DailyActivity(props) {
 
 
     return (
-      <ResponsiveContainer width="50%" aspect={3}> 
+      <ResponsiveContainer width="100%" height="100%"> 
         <BarChart
           width={300}
           height={300}

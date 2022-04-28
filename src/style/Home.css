@@ -8,8 +8,8 @@ h1 {
 }
 
 .dashboardContent {
-    margin-top: 50px;
-    margin-left: 100px;
+    margin: auto auto auto 117px;
+    width: 100%;
 }
 
 .name {
@@ -17,5 +17,21 @@ h1 {
 }
 
 .innerContent {
+    margin-top: 60px;
     display: flex;
+}
+
+.dailyActivity {
+    width: 1200px;
+    height:320px;
+}
+
+.performance {
+    width: 1200px;
+    height: 263px;
+    display: flex;
+}
+
+.performance .recharts-responsive-container:not(.performance .recharts-responsive-container:last-child) {
+    padding-right: 30px;
 }
