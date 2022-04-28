@@ -4,7 +4,6 @@ function Activities(props) {
 
     if(props.data.data) {
         const data = props.data.data.data
-        console.log(data)
 
         for (let i = 0; i < data.length; i++) {
             const activity = data[i]

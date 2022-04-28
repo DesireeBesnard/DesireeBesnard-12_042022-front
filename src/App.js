@@ -5,8 +5,8 @@ import Profil from './pages/Profil';
 import Settings from './pages/Settings';
 import Community from './pages/Community';
 import NavBar from './components/NavBar'
-import SideBar from './components/SideBar'
 import {getMainData, getActivity, getAverageSessions, getTodayScore, getUserActivities, getKeyData} from './services/UserService'
+
 
 function App() {
 
@@ -52,14 +52,14 @@ function App() {
 
         getUserActivities(id)
             .then(response => {
-                console.log("activities", response)
+                //console.log("activities", response)
                 setActivities(response)
             })
             .catch((err) => console.log(err))
 
         getKeyData(id)
             .then(response => {
-                //console.log("keyData", response)
+                console.log("keyData", response)
                 setKeyData(response)
             })
             .catch((err) => console.log(err))
@@ -73,10 +73,9 @@ function App() {
         return (
             <div className="App"> 
                 <NavBar/>
-                <SideBar/>
                 <Routes>
                     <Route exact path="/" element={<Home mainData={mainData} activity={activity} averageSessions={averageSessions} todayScore={todayScore} activities={activities} keyData = {keyData}/>} />
-                    <Route exact path="/user/:id" element={<Home mainData={mainData} activity={activity} averageSessions={averageSessions} activities={activities} keyData = {keyData}/>} />
+                    <Route exact path="/:id" element={<Home mainData={mainData} activity={activity} averageSessions={averageSessions} todayScore={todayScore} activities={activities} keyData = {keyData}/>} />
                     <Route path="/profil" element={<Profil />}/>
                     <Route path="/settings" element={<Settings />}/>
                     <Route path="/community" element={<Community />}/>

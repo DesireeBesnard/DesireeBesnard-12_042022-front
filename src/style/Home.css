@@ -1,0 +1,21 @@
+h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.dashboardContent {
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.name {
+    color: red;
+}
+
+.innerContent {
+    display: flex;
+}
