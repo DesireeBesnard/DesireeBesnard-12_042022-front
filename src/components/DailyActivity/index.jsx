@@ -22,6 +22,11 @@ function DailyActivity(props) {
     data = props.data.data
   }
 
+  for (let i = 0; i < data.length; i++) {
+    const day = data[i]
+    day.day = `${i+1}` 
+  }
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart

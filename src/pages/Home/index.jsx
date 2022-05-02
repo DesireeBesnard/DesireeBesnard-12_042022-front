@@ -90,7 +90,7 @@ function Home(props) {
   } else if (todayScore.data === 0.11) {
     greetings = 'Bravo! Vous êtes sur la bonne voie '
   } else if (todayScore.data > 0.11) {
-    greetings = 'Félicitation! Vous avez explosé vos objectifs hier'
+    greetings = 'Félicitation! Vous avez explosé vos objectifs hier 👏'
   }
 
 
