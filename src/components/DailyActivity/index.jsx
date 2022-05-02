@@ -1,4 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import '../../style/DailyActivity.css'
 
 function DailyActivity(props) {
 
@@ -8,13 +9,21 @@ function DailyActivity(props) {
   function CustomTooltip({ active, payload }) {
     if (active) {
       return (
-        <div className='tooltip'>
+        <div className='tooltip dialyActTooltip'>
           <p>{payload[0].payload.kilogram}kg</p>
           <p>{payload[0].payload.calories}Kcal</p>
         </div>
       )
     }
     return null
+  }
+
+  function CustomizedCursor({active, payload}) {
+    if(active) {
+      return (
+        <div className="customCursor"></div>
+      )
+    }
   }
 
 
@@ -40,12 +49,11 @@ function DailyActivity(props) {
           bottom: 5,
         }}
         barSize={7}
-        barCategoryGap={60}
       >
         <CartesianGrid strokeDasharray="3 3" vertical={false} />
-        <XAxis dataKey="day" />
+        <XAxis dataKey="day" tickSize={6} tick={{stroke: '#9b9eac', strokeWidth: 1, marginTop: '10px'}}/>
         <YAxis orientation="right" />
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<CustomTooltip />}  cursor={{ fill: 'rgba(196,196,196,0.5'}}/>
         <Legend verticalAlign="top" align="right" iconType="circle" iconSize={8} />
         <Bar name="Poids (kg)" dataKey="kilogram" fill="#000000" radius={[10, 10, 0, 0]} />
         <Bar name="Calories brûlées (kCal)" dataKey="calories" fill="#FF0000" radius={[10, 10, 0, 0]} />
