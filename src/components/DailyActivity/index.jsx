@@ -61,7 +61,7 @@ function DailyActivity(props) {
         <CartesianGrid stroke='#dedede' strokeDasharray="3 3" vertical={false} />
         <XAxis dataKey="day" stroke="#dedede" tickSize={0} tick={{fill: '#9b9eac'}} tickMargin={30}/>
         <YAxis axisLine={false} orientation="right" tickSize={0} tick={{fill: '#9b9eac'}} tickMargin={30}/>
-        <Tooltip content={<CustomTooltip />}  cursor={{ fill: 'rgba(196,196,196,0.5'}}/>
+        <Tooltip content={<CustomTooltip />}  cursor={{ fill: 'rgba(196,196,196,0.5', width: 90}}/>
         <Legend verticalAlign="top" align="right" iconType="circle" iconSize={8} content={CustomLegend} />
         <Bar name="Poids (kg)" dataKey="kilogram" fill="#000000" radius={[10, 10, 0, 0]} />
         <Bar name="Calories brûlées (kCal)" dataKey="calories" fill="#FF0000" radius={[10, 10, 0, 0]} />

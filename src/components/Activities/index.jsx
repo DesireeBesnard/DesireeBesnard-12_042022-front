@@ -1,4 +1,6 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import '../../style/Activities.css'
+
 
 function Activities(props) {
 
@@ -16,12 +18,12 @@ function Activities(props) {
     }
 
     return (
-        <ResponsiveContainer width="33%" height="100%">
+        <ResponsiveContainer className="activities" width="33%" height="100%">
             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-            <PolarGrid />
-            <PolarAngleAxis dataKey="kind" />
-            <PolarRadiusAxis />
-            <Radar name="Performance" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+            <PolarGrid  />
+            <PolarRadiusAxis  axisLine={false} tick={false}/>
+            <PolarAngleAxis dataKey="kind" tick={{fill: 'white'}}/>
+            <Radar name="Performance" dataKey="value" fill="#ff0000" fillOpacity={0.6} />
             </RadarChart>
         </ResponsiveContainer>
     )
