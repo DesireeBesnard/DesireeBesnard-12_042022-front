@@ -15,3 +15,30 @@
 .customCursor {
     background-color: rgba(196, 196, 196, 0.5);
 }
+
+.dailyAcLegend {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dailyAcLegend p {
+    font-size: 15px;
+}
+
+.dailyAcLegend ul {
+    display: flex;
+}
+
+.dailyAcLegend li {
+    margin-right: 40px;
+    color: #74798C;
+    font-size: 14px;
+}
+
+.dailyAcLegend li:first-child::marker {
+    color: black;
+}
+
+.dailyAcLegend li:last-child::marker {
+    color: red;
+}

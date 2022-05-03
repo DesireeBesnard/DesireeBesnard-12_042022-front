@@ -18,12 +18,20 @@ function DailyActivity(props) {
     return null
   }
 
-  function CustomizedCursor({active, payload}) {
-    if(active) {
-      return (
-        <div className="customCursor"></div>
-      )
-    }
+  function CustomLegend(props) {
+    const {payload} = props
+    return(
+      <div className='dailyAcLegend'>
+        <p>Activité quotidienne</p>
+        <ul>
+          {
+            payload.map((entry, index)=> (
+              <li key={`item-${index}`}>{entry.value}</li>
+            ))
+          }
+        </ul>
+      </div>
+    )
   }
 
 
@@ -37,7 +45,7 @@ function DailyActivity(props) {
   }
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" backgroundColor="#fbfbfb" borderRadius="5px">
       <BarChart
         width={300}
         height={300}
@@ -46,15 +54,15 @@ function DailyActivity(props) {
           top: 5,
           right: 30,
           left: 20,
-          bottom: 5,
+          bottom: 15,
         }}
         barSize={7}
       >
         <CartesianGrid strokeDasharray="3 3" vertical={false} />
-        <XAxis dataKey="day" tickSize={6} tick={{stroke: '#9b9eac', strokeWidth: 1, marginTop: '10px'}}/>
+        <XAxis dataKey="day" tickSize={0} tick={{stroke: '#9b9eac', strokeWidth: 1}} tickMargin={30}/>
         <YAxis orientation="right" />
         <Tooltip content={<CustomTooltip />}  cursor={{ fill: 'rgba(196,196,196,0.5'}}/>
-        <Legend verticalAlign="top" align="right" iconType="circle" iconSize={8} />
+        <Legend verticalAlign="top" align="right" iconType="circle" iconSize={8} content={CustomLegend} />
         <Bar name="Poids (kg)" dataKey="kilogram" fill="#000000" radius={[10, 10, 0, 0]} />
         <Bar name="Calories brûlées (kCal)" dataKey="calories" fill="#FF0000" radius={[10, 10, 0, 0]} />
       </BarChart>
