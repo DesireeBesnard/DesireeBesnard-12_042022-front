@@ -1,0 +1,14 @@
+.averageSession {
+    background-color: red;
+    border-radius: 5px;
+}
+
+.averageSessTooltip {
+    background-color: white;
+    padding: 3px 10px;
+}
+
+.averageSessLegend p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+}

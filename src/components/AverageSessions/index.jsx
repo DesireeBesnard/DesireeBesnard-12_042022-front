@@ -1,4 +1,6 @@
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import '../../style/Home.css';
+import '../../style/AverageSessions.css'
 
 function AverageSessions(props) {
 
@@ -9,12 +11,21 @@ function AverageSessions(props) {
   function CustomTooltip({ active, payload }) {
     if (active) {
       return (
-        <div className='tooltip'>
+        <div className='tooltip averageSessTooltip'>
           <p>{payload[0].payload.sessionLength}min</p>
         </div>
       )
     }
     return null
+  }
+
+  function CustomLegend() {
+
+    return(
+      <div className='averageSessLegend'>
+        <p>Durée moyenne des <br/>sessions</p>
+      </div>
+    )
   }
 
 
@@ -28,21 +39,22 @@ function AverageSessions(props) {
   }
 
   return (
-    <ResponsiveContainer width="33%" height="100%">
+    <ResponsiveContainer width="33%" height="100%" className="averageSession">
       <LineChart
         width={500}
         height={300}
         data={data}
         margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
+          top: 0,
+          right: 40,
+          left: 40,
+          bottom: 40,
         }}
       >
-        <XAxis axisLine={false} tickLine={false} dataKey="day" margin-top="50px" />
-        <Tooltip content={<CustomTooltip />} />
-        <Line type="monotone" dataKey="sessionLength" stroke="#8884d8" activeDot={{ r: 8 }} />
+        <XAxis axisLine={false} dataKey="day" tick={{fill: 'rgba(255,255,255,0.7)'}} tickLine={false} tickMargin={30}/>
+        <Tooltip content={<CustomTooltip />} cursor={false} />
+        <Legend verticalAlign="top" align="left" content={CustomLegend} />
+        <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" strokeWidth= {2} dot={false} activeDot={{ r: 6 }} />
       </LineChart>
     </ResponsiveContainer>
   )
