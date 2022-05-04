@@ -18,11 +18,16 @@ function Activities(props) {
     }
 
     return (
-        <ResponsiveContainer className="activities" width="33%" height="100%">
-            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <ResponsiveContainer 
+            className="activities"
+            width="32%" 
+            height='100%'
+            aspect={1.3} 
+        >
+        <RadarChart cx="50%" cy="50%" outerRadius="50%" data={data}>
             <PolarGrid  />
             <PolarRadiusAxis  axisLine={false} tick={false}/>
-            <PolarAngleAxis dataKey="kind" tick={{fill: 'white'}}/>
+            <PolarAngleAxis dataKey="kind" tick={{fill: 'white', fontSize: '12px'}}/>
             <Radar name="Performance" dataKey="value" fill="#ff0000" fillOpacity={0.6} />
             </RadarChart>
         </ResponsiveContainer>

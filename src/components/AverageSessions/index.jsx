@@ -39,19 +39,19 @@ function AverageSessions(props) {
   }
 
   return (
-    <ResponsiveContainer width="33%" height="100%" className="averageSession">
+    <ResponsiveContainer width="32%" height="100%" className="averageSession">
       <LineChart
-        width={500}
-        height={300}
+        width="100%"
+        height="100%"
         data={data}
         margin={{
           top: 0,
-          right: 40,
-          left: 40,
+          right: 15,
+          left: 15,
           bottom: 40,
         }}
       >
-        <XAxis axisLine={false} dataKey="day" tick={{fill: 'rgba(255,255,255,0.7)'}} tickLine={false} tickMargin={30}/>
+        <XAxis axisLine={false} dataKey="day" tick={{fill: 'rgba(255,255,255,0.7)', fontSize:'12px'}} tickLine={false} tickMargin={30}/>
         <Tooltip content={<CustomTooltip />} cursor={false} />
         <Legend verticalAlign="top" align="left" content={CustomLegend} />
         <Line type="monotone" dataKey="sessionLength" stroke="#ffffff" strokeWidth= {2} dot={false} activeDot={{ r: 6 }} />

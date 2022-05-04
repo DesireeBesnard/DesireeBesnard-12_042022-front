@@ -1,5 +1,8 @@
+.score {
+    background-color: #FBFBFB;
+}
+
 .scoreLegend {
-    position: relative;
     color: #74798c;
 }
 
@@ -16,8 +19,8 @@
 
 .scoreLegend p:first-child{
     position: absolute;
-    top: -85px;
-    left: 20px;
+    top: -55px;
+    left: 10px;
     color: #20253A;
     font-size: 15px;
 }

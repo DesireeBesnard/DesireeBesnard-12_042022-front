@@ -1,6 +1,7 @@
 h1 {
     margin: 0;
-    font-size: 48px;
+    font-size: 38px;
+    font-weight: normal;
 }
 
 .dashboard {
@@ -8,7 +9,8 @@ h1 {
 }
 
 .dashboardContent {
-    margin: auto auto auto 117px;
+    box-sizing: border-box;
+    padding: 30px 60px 30px 177px;
     width: 100%;
 }
 
@@ -17,16 +19,22 @@ h1 {
 }
 
 .innerContent {
-    margin-top: 60px;
+    margin-top: 40px;
     display: flex;
+    justify-content: space-between;
+}
+
+.innerContent > div:first-child {
+    width: 75%;
+}
+
+.innerContent > div:last-child {
+    width: 23%;
 }
 
 .performance {
-    width: 1200px;
-    height: 263px;
+    width: 100%;
+    height: 200px;
     display: flex;
-}
-
-.performance .recharts-responsive-container:not(.performance .recharts-responsive-container:last-child) {
-    padding-right: 30px;
+    justify-content: space-between;
 }

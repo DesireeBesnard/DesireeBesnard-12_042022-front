@@ -1,21 +1,23 @@
+.nutrients {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .nutrient {
     display: flex;
-    padding: 35px;
+    padding: 25px;
     background-color: #FBFBFB;
     border-radius: 5px;
 }
 
-.nutrient:not(.nutrient:last-child) {
-    margin-bottom: 39px;
-}
-
 .nutrient img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
 }
 
 .nutrient > div {
-    margin: auto auto auto 24px;
+    margin: auto auto auto 15px;
 }
 
 .nutrient p {

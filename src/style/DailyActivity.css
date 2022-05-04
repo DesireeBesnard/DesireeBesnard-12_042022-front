@@ -1,6 +1,8 @@
 .dailyActivity {
-    width: 1200px;
-    height:320px;
+    height: 250px;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    margin-bottom: 50px;
 }
 
 .dialyActTooltip {
@@ -19,10 +21,12 @@
 
 .dailyAcLegend p {
     font-size: 15px;
+    margin: 0;
 }
 
 .dailyAcLegend ul {
     display: flex;
+    margin: 0;
 }
 
 .dailyAcLegend li {

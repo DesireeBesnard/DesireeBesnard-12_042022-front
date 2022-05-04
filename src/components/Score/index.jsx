@@ -22,12 +22,12 @@ function Score(props) {
     }
 
     data[0].fill = "#ff0000"   
-    const denominator = {data: 1, fill:"#fff"}
+    const denominator = {data: 1, fill:"#fbfbfb"}
     data.push(denominator)
 
 
     return (
-        <ResponsiveContainer width="33%" height="100%">
+        <ResponsiveContainer width="32%" height="100%" className="score">
             <RadialBarChart 
                 cx="50%" 
                 cy="50%" 
