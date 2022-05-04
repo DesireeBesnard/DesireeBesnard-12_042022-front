@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types'
 import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import '../../style/Home.css';
 import '../../style/AverageSessions.css'
 
 function AverageSessions(props) {
+
 
   let data
   const days = ["L", "M", "M", "J", "V", "S", "D"]
@@ -58,6 +60,12 @@ function AverageSessions(props) {
       </LineChart>
     </ResponsiveContainer>
   )
+}
+
+
+AverageSessions.propTypes = {
+  data: PropTypes.object,
+  loading: PropTypes.bool
 }
 
 export default AverageSessions

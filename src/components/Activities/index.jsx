@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import '../../style/Activities.css'
 
@@ -33,5 +34,12 @@ function Activities(props) {
         </ResponsiveContainer>
     )
 }
+
+
+Activities.propTypes = {
+    data: PropTypes.object,
+    loading: PropTypes.bool
+}
+
 
 export default Activities

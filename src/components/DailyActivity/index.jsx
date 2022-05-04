@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import '../../style/DailyActivity.css'
 
 function DailyActivity(props) {
+
 
   let data
 
@@ -69,6 +71,11 @@ function DailyActivity(props) {
       </BarChart>
     </ResponsiveContainer>
   )
+}
+
+DailyActivity.propTypes = {
+  data: PropTypes.object,
+  loading: PropTypes.bool
 }
 
 export default DailyActivity

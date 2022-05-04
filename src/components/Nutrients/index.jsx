@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types'
 import React from "react";
 import "../../style/Nutrient.css"
 
 function Nutrient(props) {
+
+
     let src
     let data
     let measure
@@ -23,6 +26,14 @@ function Nutrient(props) {
             </div>
         </div>
     )
+}
+
+Nutrient.propTypes = {
+    src: PropTypes.string,
+    data: PropTypes.number,
+    measure: PropTypes.string,
+    nutrient: PropTypes.string,
+    loading: PropTypes.bool
 }
 
 export default Nutrient

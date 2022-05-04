@@ -1,7 +1,11 @@
+import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
 import '../../style/Score.css'
 
 function Score(props) {
+
+  console.log(props)
+  console.log( typeof props.data)
 
     let data
 
@@ -50,6 +54,11 @@ function Score(props) {
             </RadialBarChart>
         </ResponsiveContainer>
     )
+}
+
+Score.propTypes = {
+    data: PropTypes.object,
+    loading: PropTypes.bool
 }
 
 export default Score
