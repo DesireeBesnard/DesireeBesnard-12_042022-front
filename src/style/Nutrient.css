@@ -33,3 +33,19 @@
     font-size: 14px;
     color: #74798C;
 } 
+
+@media (min-width: 1200px) {
+    .nutrients {
+        align-items: center;
+    }
+
+    .nutrient {
+        width: 185px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .nutrient {
+        padding: 35px;
+    }
+}

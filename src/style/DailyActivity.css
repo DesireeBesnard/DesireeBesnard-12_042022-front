@@ -42,3 +42,10 @@
 .dailyAcLegend li:last-child::marker {
     color: red;
 }
+
+@media (min-width: 1200px) {
+    .dailyActivity {
+        height: 320px;
+    }
+}
+

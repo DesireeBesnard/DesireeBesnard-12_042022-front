@@ -1,5 +1,6 @@
 .score {
     background-color: #FBFBFB;
+    border-radius: 5px;
 }
 
 .scoreLegend {
@@ -27,4 +28,16 @@
 
 .scoreLegend p:last-child{
     text-align: center;
+}
+
+@media (min-width: 1200px) and (max-width: 1440.98px) {
+    .scoreLegend p:first-child {
+        top: -77px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .scoreLegend p:first-child {
+        top: -95px;
+    }
 }

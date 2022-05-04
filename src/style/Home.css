@@ -38,3 +38,36 @@ h1 {
     display: flex;
     justify-content: space-between;
 }
+
+/* @media (min-width: 1200px) { ... } */
+@media (min-width: 1200px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .dashboardContent {
+        padding: 50px 150px 50px 267px;
+    }
+}
+
+ @media (min-width: 1200px) and (max-width: 1440.98px) {
+    .innerContent > div:first-child {
+        width: 73%;
+    }
+
+    .performance {
+        height: 250px;
+    }
+ }
+
+ @media (min-width: 1441px) {
+    .performance {
+        height:290px;
+    }
+
+    .performance > div {
+        width: 29% !important;
+    }
+ }
+
