@@ -58,7 +58,7 @@ yarn start
 A message may appear in the terminal when launching:
 ```
 ? Something is already running on port 3000. Probably:
-  /home/desireeb/.nvm/versions/node/v16.14.2/bin/node app/index.js (pid 26441)
+  /home/.nvm/versions/node/v16.14.2/bin/node app/index.js (pid 26441)
   in /Sportsee/sportsee-Back
 
   Would you like to run the app on another port instead?
