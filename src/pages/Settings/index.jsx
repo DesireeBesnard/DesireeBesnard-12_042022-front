@@ -1,5 +1,4 @@
 import '../../style/Home.css';
-import '../../style/Settings.css';
 
 function Settings() {
   return (

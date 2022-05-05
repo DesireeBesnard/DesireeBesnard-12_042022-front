@@ -1,5 +1,4 @@
 import '../../style/Home.css';
-import '../../style/Profil.css';
 
 function Profil() {
   return (

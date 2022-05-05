@@ -1,5 +1,4 @@
 import '../../style/Home.css';
-import '../../style/Community.css';
 
 function Community() {
   return (
