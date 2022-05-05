@@ -1,5 +1,5 @@
 # Project - SportSee React Dashboard
-![alt text](https://github.com/DesireeBesnard/DesireeBesnard-12_042022-front/blob/[main]/project-thumbnail.png?raw=true)  
+![alt text](https://github.com/DesireeBesnard/DesireeBesnard-12_042022-front/blob/main/public/assets/project-thumbnail.png?raw=true)  
 
 This project consists of the integration of a dashboard with data retrieved from an API.
 - The backend API uses Node.js ([Express](https://expressjs.com/))
