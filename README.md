@@ -1,4 +1,4 @@
-# Project - SportSee React Dashboard
+# Project - SportSee React Dashboard (FrontEnd)
 ![alt text](https://github.com/DesireeBesnard/DesireeBesnard-12_042022-front/blob/main/public/assets/project-thumbnail.png?raw=true)  
 
 This project consists of the integration of a dashboard with data retrieved from an API.
@@ -34,6 +34,8 @@ For a good organization, you will create a sportSee folder in which you will clo
 Follow the indications in the [README](https://github.com/DesireeBesnard/DesireeBesnard_12_11042022-back) of the backend project.
 
 ### Frontend
+
+Fork the repository
 
 Clone the frontend project into the sportSee folder:
 ```
