@@ -73,4 +73,4 @@ Type yes
 
 
 **Warning, currently only two users have been mocked. They have userId 12 and 18 respectively.**
-So go to: `http://localhost:3001/user/12` or `http://localhost:3001/user/18`
+So go to: `http://localhost:3001/12` or `http://localhost:3001/18`
