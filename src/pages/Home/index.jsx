@@ -8,7 +8,7 @@ import Score from "../../components/Score"
 import Nutrient from "../../components/Nutrients"
 import '../../style/Home.css';
 
-function Home(props) {
+function Home() {
 
   const url = window.location.href.split("/")
   const id = url[url.length - 1]

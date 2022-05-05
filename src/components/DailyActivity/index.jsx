@@ -2,8 +2,15 @@ import PropTypes from 'prop-types'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import '../../style/DailyActivity.css'
 
-function DailyActivity(props) {
 
+/**
+ * Returns daily activity in the form of a BarChart
+ * @param { object } props 
+ * @param { object } props.data 
+ * @param { boolean } props.loading - loading status
+ * @returns { HTMLElement }
+ */
+function DailyActivity(props) {
 
   let data
 

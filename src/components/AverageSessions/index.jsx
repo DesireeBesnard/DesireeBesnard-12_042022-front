@@ -3,8 +3,15 @@ import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 're
 import '../../style/Home.css';
 import '../../style/AverageSessions.css'
 
-function AverageSessions(props) {
 
+/**
+ * Returns average session duration as a line chart
+ * @param { object } props 
+ * @param { object } props.data 
+ * @param { boolean } props.loading - loading status
+ * @returns { HTMLElement }
+ */
+function AverageSessions(props) {
 
   let data
   const days = ["L", "M", "M", "J", "V", "S", "D"]

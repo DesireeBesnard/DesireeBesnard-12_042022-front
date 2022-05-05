@@ -3,8 +3,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 import '../../style/Activities.css'
 
 
+/**
+ * Returns type of activity by radar chart
+ * @param { object } props 
+ * @param { object } props.data 
+ * @param { boolean } props.loading - loading status
+ * @returns { HTMLElement }
+ */
 function Activities(props) {
-
     let data
 
     

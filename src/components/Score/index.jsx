@@ -2,10 +2,18 @@ import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
 import '../../style/Score.css'
 
-function Score(props) {
 
-  console.log(props)
-  console.log( typeof props.data)
+/**
+ * Returns goal score in the form of a radial bar chart
+ * @param { object } props 
+ * @param { number } props.data - value of nutrient as integer
+ * @param { string } props.measure - value unity of measure
+ * @param { string } props.nutrient - nutrient category
+ * @param { string } props.nutrient - component thumbnail
+ * @param { boolean } props.loading - loading status
+ * @returns { HTMLElement }
+ */
+function Score(props) {
 
     let data
 

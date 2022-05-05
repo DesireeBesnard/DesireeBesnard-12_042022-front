@@ -2,8 +2,18 @@ import PropTypes from 'prop-types'
 import React from "react";
 import "../../style/Nutrient.css"
 
-function Nutrient(props) {
 
+/**
+ * Returns cards with key nutritional infos
+ * @param { object } props 
+ * @param { number } props.data - value of nutrient as integer
+ * @param { string } props.measure - value unity of measure
+ * @param { string } props.nutrient - nutrient category
+ * @param { string } props.nutrient - component thumbnail
+ * @param { boolean } props.loading - loading status
+ * @returns { HTMLElement }
+ */
+function Nutrient(props) {
 
     let src
     let data
