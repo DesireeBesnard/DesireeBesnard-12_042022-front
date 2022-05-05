@@ -29,7 +29,7 @@ For a good organization, you will create a sportSee folder in which you will clo
 
 ### Backend
 
-Follow the indications in the README of the backend project.
+Follow the indications in the [README](https://github.com/DesireeBesnard/DesireeBesnard_12_11042022-back) of the backend project.
 
 ### Frontend
 
@@ -50,12 +50,21 @@ yarn
 ```
 
 ## Launching the app in local
-Launch the backend first [readme](https://github.com/DesireeBesnard/DesireeBesnard_12_11042022-back)
-Launch the app:
+Launch the backend first ([README](https://github.com/DesireeBesnard/DesireeBesnard_12_11042022-back)), then launch the app:
 ```
 yarn start
 ```
+
+A message may appear in the terminal when launching:
+```
+? Something is already running on port 3000. Probably:
+  /home/desireeb/.nvm/versions/node/v16.14.2/bin/node app/index.js (pid 26441)
+  in /Sportsee/sportsee-Back
+
+  Would you like to run the app on another port instead?
+```
+Type yes
+
+
 **Warning, currently only two users have been mocked. They have userId 12 and 18 respectively.**
 So go to: `http://localhost:3001/user/12` or `http://localhost:3001/user/18`
-
-
