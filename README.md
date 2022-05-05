@@ -12,7 +12,9 @@ This project consists of the integration of a dashboard with data retrieved from
 - [Prerequisites](#prerequisites)
 - [Project Architecture](#project-architecture)
 - [Installation steps](#installation-steps)
-- [Launching the project](#launching-the-project)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Launching the app in local](#launching-the-app-in-local)
 
 
 ## Prerequisites
