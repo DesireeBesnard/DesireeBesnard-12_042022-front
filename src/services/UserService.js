@@ -12,10 +12,9 @@ export async function getMainData(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}`);
-        console.log(response)
+        //console.log(response)
         return response.data;
     } catch (error) {
-        console.log(error.response.status)
         if( error.response.status === 404) {
             window.location.href = "/error"
         }
@@ -37,6 +36,9 @@ export async function getActivity(id) {
         //console.log('activity  ', response.data)
         return response.data;
     } catch (error) {
+        if( error.response.status === 404) {
+            window.location.href = "/error"
+        }
         return [];
     }
 }
@@ -55,6 +57,9 @@ export async function getAverageSessions(id) {
         //console.log('response  ', response.data)
         return response.data;
     } catch (error) {
+        if( error.response.status === 404) {
+            window.location.href = "/error"
+        }
         return [];
     }
 }
@@ -73,6 +78,9 @@ export async function getTodayScore(id) {
         //console.log('response  ', response.data)
         return response.data;
     } catch (error) {
+        if( error.response.status === 404) {
+            window.location.href = "/error"
+        }
         return [];
     }
 }
@@ -91,6 +99,9 @@ export async function getUserActivities(id) {
         //console.log('response  ', response.data)
         return response.data;
     } catch (error) {
+        if( error.response.status === 404) {
+            window.location.href = "/error"
+        }
         return [];
     }
 }
@@ -109,6 +120,9 @@ export async function getKeyData(id) {
         console.log('response  ', response.data)
         return response.data;
     } catch (error) {
+        if( error.response.status === 404) {
+            window.location.href = "/error"
+        }
         return [];
     }
 }
