@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getMainData, getActivity, getAverageSessions, getTodayScore, getUserActivities, getKeyData } from '../../api/UserService'
+import { getMainData, getActivity, getAverageSessions, getTodayScore, getUserActivities, getKeyData } from '../../services/api/UserService'
 import SideBar from '../../components/SideBar'
 import DailyActivity from "../../components/DailyActivity"
 import AverageSessions from "../../components/AverageSessions";
