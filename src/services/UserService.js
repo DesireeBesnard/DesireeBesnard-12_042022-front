@@ -117,7 +117,7 @@ export async function getKeyData(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}/key-data`);
-        console.log('response  ', response.data)
+        //console.log('response  ', response.data)
         return response.data;
     } catch (error) {
         if( error.response.status === 404) {

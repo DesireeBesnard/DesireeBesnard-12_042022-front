@@ -11,7 +11,7 @@
     margin: auto;
 }
 
-.header a {
+nav a {
     text-decoration: none;
     color: inherit;
     display: inline-block;

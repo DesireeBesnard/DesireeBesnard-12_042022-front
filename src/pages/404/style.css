@@ -1,0 +1,15 @@
+.error {
+    height: 70vh;
+    width: 60vw;
+    margin: 10vh auto;
+    text-align: center;
+}
+
+.error h1 {
+    margin-bottom: 50px;
+}
+
+.error a {
+    color: red;
+    font-weight: bold
+}

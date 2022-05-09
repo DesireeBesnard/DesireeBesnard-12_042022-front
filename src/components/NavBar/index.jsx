@@ -7,9 +7,9 @@ function NavBar() {
             <Link to ='/' ><img src={process.env.PUBLIC_URL + '/assets/logo.png'} alt='logo Kasa' className='logo' /></Link>
             <nav>
                 <NavLink to='/' >Accueil</NavLink>
-                <NavLink to='/profil' >Profil</NavLink>
-                <NavLink to='/settings' >Réglage</NavLink>
-                <NavLink to='/community' >Communité</NavLink>
+                <NavLink to='/user/profil' >Profil</NavLink>
+                <NavLink to='/user/settings' >Réglage</NavLink>
+                <NavLink to='/user/community' >Communité</NavLink>
             </nav>
         </header>
     )
