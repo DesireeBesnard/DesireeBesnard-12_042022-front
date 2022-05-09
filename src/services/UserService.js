@@ -12,9 +12,13 @@ export async function getMainData(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}`);
-        //console.log('response  ', response.data)
+        console.log(response)
         return response.data;
     } catch (error) {
+        console.log(error.response.status)
+        if( error.response.status === 404) {
+            window.location.href = "/error"
+        }
         return [];
     }
 }

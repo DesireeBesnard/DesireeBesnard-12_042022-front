@@ -32,6 +32,7 @@ function Home() {
   useEffect(() => {
     getMainData(id)
       .then(response => {
+
         setMainData(response)
       })
       .catch((err) => console.log(err))
