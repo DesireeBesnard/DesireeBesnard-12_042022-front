@@ -6,7 +6,7 @@ import AverageSessions from "../../components/AverageSessions";
 import Activities from "../../components/Activities"
 import Score from "../../components/Score"
 import Nutrient from "../../components/Nutrients"
-import '../../style/Home.css';
+import './style.css';
 
 function Home() {
 
@@ -104,22 +104,57 @@ function Home() {
 
           <div>
             <div className='dailyActivity'>
-              <DailyActivity data={activity} loading={onLoad} />
+              <DailyActivity 
+                data={activity} 
+                loading={onLoad} 
+              />
             </div>
             <div className='performance'>
-              <AverageSessions data={averageSessions} loading={onLoad} />
-              <Activities data={activities} loading={onLoad} />
-              <Score data={todayScore} loading={onLoad} />
+              <AverageSessions 
+                data={averageSessions} 
+                loading={onLoad} 
+              />
+              <Activities 
+                data={activities} 
+                loading={onLoad} 
+              />
+              <Score 
+                data={todayScore} 
+                loading={onLoad} 
+              />
             </div>
           </div>
 
           <div className='nutrients'>
-            <Nutrient src="calories-icon.png" data={calories} measure="kCal" nutrient="Calories" loading={onLoad} />
-            <Nutrient src="protein-icon.png" data={proteines} measure="g" nutrient="Proteines" loading={onLoad} />
-            <Nutrient src="carbs-icon.png" data={carbs} measure="g" nutrient="Glucides" loading={onLoad} />
-            <Nutrient src="fat-icon.png" data={lipid} measure="g" nutrient="Lipides" loading={onLoad} />
+            <Nutrient 
+              src="calories-icon.png" 
+              data={calories} 
+              measure="kCal" 
+              nutrient="Calories" 
+              loading={onLoad} 
+            />
+            <Nutrient 
+              src="protein-icon.png" 
+              data={proteines} 
+              measure="g" 
+              nutrient="Proteines" 
+              loading={onLoad} 
+            />
+            <Nutrient 
+              src="carbs-icon.png" 
+              data={carbs} 
+              measure="g" 
+              nutrient="Glucides" 
+              loading={onLoad} 
+            />
+            <Nutrient 
+              src="fat-icon.png" 
+              data={lipid} 
+              measure="g" 
+              nutrient="Lipides" 
+              loading={onLoad} 
+            />
           </div>
-
         </div>
       </div>
     </div>

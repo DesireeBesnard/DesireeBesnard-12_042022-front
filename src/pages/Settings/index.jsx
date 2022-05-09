@@ -1,4 +1,3 @@
-import '../../style/Home.css';
 
 function Settings() {
   return (

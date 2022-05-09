@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
-import '../../style/Score.css'
+import './style.css'
 
 
 /**
@@ -48,17 +48,22 @@ function Score(props) {
                 barSize={10} 
                 data={data}
                 startAngle={90} 
-                endAngle={450}
-            >
-            <RadialBar
-                minAngle={15}
-                dataKey="data"
-                legendType="none"
-                startAngle={0} 
-                endAngle={360}
-                cornerRadius={5}
-            />
-            <Legend iconSize={10} verticalAlign="middle"  align="right" content={CustomLegend} />
+                endAngle={450}>
+
+                <RadialBar
+                    minAngle={15}
+                    dataKey="data"
+                    legendType="none"
+                    startAngle={0} 
+                    endAngle={360}
+                    cornerRadius={5}/>
+
+                <Legend 
+                    iconSize={10} 
+                    verticalAlign="middle"  
+                    align="right" 
+                    content={CustomLegend} />
+                    
             </RadialBarChart>
         </ResponsiveContainer>
     )

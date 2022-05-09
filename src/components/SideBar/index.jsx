@@ -1,6 +1,5 @@
 import {Link} from 'react-router-dom'
-import '../../style/Home.css'
-import '../../style/VerticalNavigation.css'
+import './style.css'
 
 function VerticalNavigation() {
     const date = new Date().getFullYear()
