@@ -1,6 +1,7 @@
 import React from "react";
 import {Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
+import Help from './pages/Help'
 import Home from './pages/Home';
 import Meditation from '../src/components/Meditation'
 import Swimming from '../src/components/Swimming'
@@ -17,7 +18,7 @@ function App() {
         <div className="App"> 
             <NavBar/>
             <Routes>
-                <Route exact path="/" />
+                <Route exact path="/" element={<Help />}/>
                 <Route exact path="/:id" element={<Home />} />
                 <Route exact path="/:id/activities/yoga" element={<Meditation />} />
                 <Route exact path="/:id/activities/swimming" element={<Swimming />} />

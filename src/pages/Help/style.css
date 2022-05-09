@@ -1,0 +1,11 @@
+.help {
+    height: 70vh;
+    width: 60vw;
+    margin: 10vh auto;
+    text-align: center;
+}
+
+.help a {
+    color: red;
+    font-weight: bold
+}
