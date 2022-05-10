@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { formatScore} from '../../services/format.js'
+import { formatScore, formatActivity } from '../../services/format.js'
 
 
 /**
@@ -13,7 +13,7 @@ export async function getMainData(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}`);
-        console.log(response.data.data.todayScore)
+        //console.log(response.data)
         return response.data;
     } catch (error) {
         if( error.response.status === 404) {
@@ -35,7 +35,8 @@ export async function getActivity(id) {
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}/activity`);
         //console.log('activity  ', response.data)
-        return response.data;
+        const formatResponse = formatActivity(response.data.data.sessions)
+        return formatResponse;
     } catch (error) {
         if( error.response.status === 404) {
             window.location.href = "/error"
@@ -97,7 +98,7 @@ export async function getTodayScore(id) {
 export async function getUserActivities(id) {
 
     try {
-        const response = await axios.get(`http://localhost:3000/user/${id}/activities`);
+        const response = await axios.get(`http://localhost:3000/user/${id}/performance`);
         //console.log('response  ', response.data)
         return response.data;
     } catch (error) {

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { ActivityCustomLegend, ActivityCustomTooltip } from '../../services/format'
 import './style.css'
 
 
@@ -15,43 +16,10 @@ function DailyActivity(props) {
   let data
 
 
-  function CustomTooltip({ active, payload }) {
-    if (active) {
-      return (
-        <div className='tooltip dialyActTooltip'>
-          <p>{payload[0].payload.kilogram}kg</p>
-          <p>{payload[0].payload.calories}Kcal</p>
-        </div>
-      )
-    }
-    return null
-  }
-
-  function CustomLegend(props) {
-    const {payload} = props
-    return(
-      <div className='dailyAcLegend'>
-        <p>Activité quotidienne</p>
-        <ul>
-          {
-            payload.map((entry, index)=> (
-              <li key={`item-${index}`}>{entry.value}</li>
-            ))
-          }
-        </ul>
-      </div>
-    )
-  }
-
-
   if (props.loading === false) {
     data = props.data.data
   }
 
-  for (let i = 0; i < data.length; i++) {
-    const day = data[i]
-    day.day = `${i+1}` 
-  }
 
   return (
     <ResponsiveContainer 
@@ -87,7 +55,7 @@ function DailyActivity(props) {
           tickMargin={20}/>
 
         <Tooltip 
-          content={<CustomTooltip />}  
+          content={< ActivityCustomTooltip />}  
           cursor={{ fill: 'rgba(196,196,196,0.5'}}/>
 
         <Legend 
@@ -95,7 +63,7 @@ function DailyActivity(props) {
           align="right" 
           iconType="circle" 
           iconSize={8} 
-          content={CustomLegend} />
+          content={< ActivityCustomLegend />} />
 
         <Bar 
           name="Poids (kg)" 
