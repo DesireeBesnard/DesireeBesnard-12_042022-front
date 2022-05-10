@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { formatScore} from '../../services/format.js'
 
 
 /**
@@ -12,7 +13,7 @@ export async function getMainData(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}`);
-        //console.log(response)
+        console.log(response.data.data.todayScore)
         return response.data;
     } catch (error) {
         if( error.response.status === 404) {
@@ -65,7 +66,7 @@ export async function getAverageSessions(id) {
 }
 
 /**
- * @description Send request to get today's goal completion using axios api
+ * @description Send request to get today's goal completion using axios api (a changer)
  * @param { string } id - user id
  * @return { Promise }
  * @return { Promise.resolve< object > } response.data
@@ -74,9 +75,10 @@ export async function getAverageSessions(id) {
 export async function getTodayScore(id) {
 
     try {
-        const response = await axios.get(`http://localhost:3000/user/${id}/today-score`);
-        //console.log('response  ', response.data)
-        return response.data;
+        const response = await axios.get(`http://localhost:3000/user/${id}`);
+        //console.log(response.data)
+        const formatResponse = formatScore(response.data.data.todayScore)
+        return formatResponse;
     } catch (error) {
         if( error.response.status === 404) {
             window.location.href = "/error"
@@ -86,7 +88,7 @@ export async function getTodayScore(id) {
 }
 
 /**
- * @description Send request to get activity types using axios api
+ * @description Send request to get activity types using axios api (a changer)
  * @param { string } id - user id
  * @return { Promise }
  * @return { Promise.resolve< object > } response.data

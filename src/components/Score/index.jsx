@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { ScoreCustomLegend } from '../../services/format'
 import './style.css'
 
 
 /**
  * Returns goal score in the form of a radial bar chart
- * @param { object } props 
+ * @param { array } props 
  * @param { number } props.data - value of nutrient as integer
  * @param { string } props.measure - value unity of measure
  * @param { string } props.nutrient - nutrient category
@@ -17,25 +18,10 @@ function Score(props) {
 
     let data
 
-    function CustomLegend(props) {
-        const {payload} = props
-        return(
-          <div className='scoreLegend'>
-            <p>Score</p>
-            <p><span>{payload[0].payload.value*100}%</span><br/>de votre <br/> objectif</p>
-          </div>
-        )
-      }
-    
 
-    
     if(props.loading === false) {
-        data = [props.data]
+        data = props.data
     }
-
-    data[0].fill = "#ff0000"   
-    const denominator = {data: 1, fill:"#fbfbfb"}
-    data.push(denominator)
 
 
     return (
@@ -62,7 +48,7 @@ function Score(props) {
                     iconSize={10} 
                     verticalAlign="middle"  
                     align="right" 
-                    content={CustomLegend} />
+                    content={ScoreCustomLegend} />
                     
             </RadialBarChart>
         </ResponsiveContainer>
