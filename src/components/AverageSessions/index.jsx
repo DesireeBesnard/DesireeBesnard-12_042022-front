@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { AverageSessionsCustomLegend, AverageSessionsCustomTooltip } from '../../services/format'
 import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './style.css'
 
@@ -13,37 +14,10 @@ import './style.css'
 function AverageSessions(props) {
 
   let data
-  const days = ["L", "M", "M", "J", "V", "S", "D"]
-
-
-  function CustomTooltip({ active, payload }) {
-    if (active) {
-      return (
-        <div className='tooltip averageSessTooltip'>
-          <p>{payload[0].payload.sessionLength}min</p>
-        </div>
-      )
-    }
-    return null
-  }
-
-  function CustomLegend() {
-
-    return (
-      <div className='averageSessLegend'>
-        <p>Durée moyenne des <br />sessions</p>
-      </div>
-    )
-  }
 
 
   if (props.loading === false) {
-    data = props.data.data.sessions
-  }
-
-  for (let i = 0; i < data.length; i++) {
-    const session = data[i]
-    session.day = days[i]
+    data = props.data
   }
 
   return (
@@ -66,12 +40,12 @@ function AverageSessions(props) {
           tickMargin={30}/>
 
         <Tooltip 
-          content={<CustomTooltip />} 
+          content={<AverageSessionsCustomTooltip />} 
           cursor={false} />
 
         <Legend 
           verticalAlign="top" 
-          align="left" content={CustomLegend} />
+          align="left" content={<AverageSessionsCustomLegend />} />
 
         <Line 
           type="monotone" 

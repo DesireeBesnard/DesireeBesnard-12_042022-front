@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { formatScore, formatActivity, formatKeyData } from '../../services/format.js'
+import {formatActivity, formatAverageSessions, formatScore,  formatKeyData } from '../../services/format.js'
 
 
 /**
@@ -111,8 +111,9 @@ export async function getAverageSessions(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}/average-sessions`);
-        //console.log('response  ', response.data)
-        return response.data;
+        //console.log( response.data)
+        const formatResponse = formatAverageSessions(response.data.data.sessions)
+        return formatResponse;
     } catch (error) {
         if( error.response.status === 404) {
             window.location.href = "/error"
