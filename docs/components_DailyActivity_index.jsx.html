@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> components/DailyActivity/index.jsx</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">My React components</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#Activities">Activities</a></li><li><a href="global.html#AverageSessions">AverageSessions</a></li><li><a href="global.html#DailyActivity">DailyActivity</a></li><li><a href="global.html#formatActivities">formatActivities</a></li><li><a href="global.html#formatActivity">formatActivity</a></li><li><a href="global.html#formatAverageSessions">formatAverageSessions</a></li><li><a href="global.html#formatKeyData">formatKeyData</a></li><li><a href="global.html#formatScore">formatScore</a></li><li><a href="global.html#getActivity">getActivity</a></li><li><a href="global.html#getAverageSessions">getAverageSessions</a></li><li><a href="global.html#getMainData">getMainData</a></li><li><a href="global.html#getUserActivities">getUserActivities</a></li><li><a href="global.html#Nutrient">Nutrient</a></li><li><a href="global.html#Score">Score</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>components/DailyActivity/index.jsx</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import PropTypes from 'prop-types'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { ActivityCustomLegend, ActivityCustomTooltip } from '../../services/format/activityFormat'
+import './style.css'
+
+
+/**
+ * Returns daily activity in the form of a BarChart
+ * @param { object } props 
+ * @property { object } props.data 
+ * @property { boolean } props.loading - loading status
+ * @returns { HTMLElement }
+ */
+function DailyActivity(props) {
+
+  let data
+
+
+  if (props.loading === false) {
+    data = props.data.data
+  }
+
+
+  return (
+    &lt;ResponsiveContainer 
+      width="100%" 
+      height="100%" 
+      borderRadius="5px">
+
+      &lt;BarChart
+        width={'100%'}
+        height={'100%'}
+        data={data}
+        margin={{ top: 40, right: 40, left: 40, bottom: 40}}
+        barSize={7}
+        barCategoryGap={150} >
+
+        &lt;CartesianGrid 
+          stroke='#dedede' 
+          strokeDasharray="3 3" 
+          vertical={false} />
+
+        &lt;XAxis 
+          dataKey="day" 
+          stroke="#dedede" 
+          tickSize={0} 
+          tick={{fill: '#9b9eac'}} 
+          tickMargin={20}/>
+
+        &lt;YAxis 
+          axisLine={false} 
+          orientation="right" 
+          tickSize={0} 
+          tick={{fill: '#9b9eac'}} 
+          tickMargin={20}/>
+
+        &lt;Tooltip 
+          content={&lt; ActivityCustomTooltip />}  
+          cursor={{ fill: 'rgba(196,196,196,0.5'}}/>
+
+        &lt;Legend 
+          verticalAlign="top" 
+          align="right" 
+          iconType="circle" 
+          iconSize={8} 
+          content={&lt; ActivityCustomLegend />} />
+
+        &lt;Bar 
+          name="Poids (kg)" 
+          dataKey="kilogram" 
+          fill="#000000" 
+          radius={[10, 10, 0, 0]} />
+
+        &lt;Bar 
+          name="Calories brûlées (kCal)" 
+          dataKey="calories" 
+          fill="#FF0000" 
+          radius={[10, 10, 0, 0]} />
+      &lt;/BarChart>
+    &lt;/ResponsiveContainer>
+  )
+}
+
+DailyActivity.propTypes = {
+  data: PropTypes.object,
+  loading: PropTypes.bool
+}
+
+export default DailyActivity</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.10</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+
+</body>
+</html>
