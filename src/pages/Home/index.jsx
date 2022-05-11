@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getMainData, getActivity, getAverageSessions, getTodayScore, getUserActivities, getKeyData } from '../../services/api/UserService'
+import { getMainData, getActivity, getAverageSessions, getUserActivities} from '../../services/api/UserService'
 import SideBar from '../../components/SideBar'
 import DailyActivity from "../../components/DailyActivity"
 import AverageSessions from "../../components/AverageSessions";
@@ -13,7 +13,7 @@ function Home() {
   const url = window.location.href.split("/")
   const id = url[url.length - 1]
 
-  const [mainData, setMainData] = useState([])
+  const [mainData, setMainData] = useState({})
   const [activity, setActivity] = useState([])
   const [averageSessions, setAverageSessions] = useState([])
   const [todayScore, setTodayScore] = useState([])
@@ -32,8 +32,9 @@ function Home() {
   useEffect(() => {
     getMainData(id)
       .then(response => {
-
-        setMainData(response)
+        setMainData(response[0])
+        setTodayScore(response[1])
+        setKeyData(response[2])
       })
       .catch((err) => console.log(err))
 
@@ -49,11 +50,6 @@ function Home() {
       })
       .catch((err) => console.log(err))
 
-    getTodayScore(id)
-      .then(response => {
-        setTodayScore(response)
-      })
-      .catch((err) => console.log(err))
 
     getUserActivities(id)
       .then(response => {
@@ -61,15 +57,12 @@ function Home() {
       })
       .catch((err) => console.log(err))
 
-    getKeyData(id)
-      .then(response => {
-        setKeyData(response)
-        setLoading(false)
-      })
-      .catch((err) => console.log(err))
-
   }, [id])
 
+
+  if ((mainData.length !==0)&&(averageSessions.length !== 0)&&(activities.length !==0) && (onLoad === true)) {
+    setLoading(false)
+  }
 
   if (onLoad === true) {
     return <div> Loading ...</div>
@@ -78,7 +71,7 @@ function Home() {
     return <div> Erreur 505</div>
   }
   if ((onLoad === false) && (Object.keys(mainData))) {
-    name = mainData.data.userInfos.firstName
+    name = mainData.firstName
     calories = keyData.data.calorieCount
     proteines = keyData.data.proteinCount
     carbs = keyData.data.carbohydrateCount
