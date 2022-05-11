@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
-import { ScoreCustomLegend } from '../../services/format'
+import { ScoreCustomLegend } from '../../services/format/scoreFormat'
 import './style.css'
 
 

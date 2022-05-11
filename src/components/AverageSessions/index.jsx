@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { AverageSessionsCustomLegend, AverageSessionsCustomTooltip } from '../../services/format'
+import { AverageSessionsCustomLegend, AverageSessionsCustomTooltip } from '../../services/format/averageSessionsFormat'
 import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './style.css'
 
@@ -12,8 +12,6 @@ import './style.css'
  * @returns { HTMLElement }
  */
 function AverageSessions(props) {
-
-  console.log(props)
 
   let data
 

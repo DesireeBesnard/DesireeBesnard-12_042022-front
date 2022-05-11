@@ -1,5 +1,9 @@
 import axios from 'axios'
-import {formatActivity, formatAverageSessions,formatActivities, formatScore,  formatKeyData } from '../../services/format.js'
+import {formatActivity} from '../../services/format/activityFormat'
+import { formatAverageSessions } from '../../services/format/averageSessionsFormat'
+import { formatActivities } from '../../services/format/ActivitiesFormat'
+import { formatScore} from '../../services/format/scoreFormat'
+import { formatKeyData } from '../../services/format/keyDataFormat'
 
 
 /**
@@ -31,7 +35,6 @@ export async function getMainData(id) {
     }
 }
 
-
 /**
  * @description Send request to get daily activity data (weight and calories burned) using axios api
  * @param { string } id - user id
@@ -53,7 +56,6 @@ export async function getActivity(id) {
     }
 }
 
-
 /**
  * @description Send request to get average session duration using axios api
  * @param { string } id - user id
@@ -74,7 +76,6 @@ export async function getAverageSessions(id) {
         return [];
     }
 }
-
 
 /**
  * @description Send request to get activity types using axios api

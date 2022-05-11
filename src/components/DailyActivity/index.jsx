@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { ActivityCustomLegend, ActivityCustomTooltip } from '../../services/format'
+import { ActivityCustomLegend, ActivityCustomTooltip } from '../../services/format/activityFormat'
 import './style.css'
 
 
@@ -12,8 +12,6 @@ import './style.css'
  * @returns { HTMLElement }
  */
 function DailyActivity(props) {
-
-  console.log(props)
 
   let data
 
