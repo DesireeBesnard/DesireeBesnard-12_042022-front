@@ -6,12 +6,9 @@ import './style.css'
 
 /**
  * Returns goal score in the form of a radial bar chart
- * @param { array } props 
- * @param { number } props.data - value of nutrient as integer
- * @param { string } props.measure - value unity of measure
- * @param { string } props.nutrient - nutrient category
- * @param { string } props.nutrient - component thumbnail
- * @param { boolean } props.loading - loading status
+ * @param { object } props 
+ * @property { array } props.data - value of nutrient as integer
+ * @property { boolean } props.loading - loading status
  * @returns { HTMLElement }
  */
 function Score(props) {

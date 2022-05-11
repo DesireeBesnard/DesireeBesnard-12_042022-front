@@ -7,14 +7,15 @@ import './style.css'
 /**
  * Returns average session duration as a line chart
  * @param { object } props 
- * @param { object } props.data 
- * @param { boolean } props.loading - loading status
+ * @property { array } props.data 
+ * @property { boolean } props.loading - loading status
  * @returns { HTMLElement }
  */
 function AverageSessions(props) {
 
-  let data
+  console.log(props)
 
+  let data
 
   if (props.loading === false) {
     data = props.data
@@ -61,9 +62,9 @@ function AverageSessions(props) {
 }
 
 
-/*AverageSessions.propTypes = {
-  data: PropTypes.object,
+AverageSessions.propTypes = {
+  data: PropTypes.array,
   loading: PropTypes.bool
-}*/
+}
 
 export default AverageSessions
