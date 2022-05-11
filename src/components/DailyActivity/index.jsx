@@ -7,7 +7,7 @@ import './style.css'
 /**
  * Returns daily activity in the form of a BarChart
  * @param { object } props 
- * @param { object } props.data 
+ * @param { array } props.data 
  * @param { boolean } props.loading - loading status
  * @returns { HTMLElement }
  */
@@ -81,9 +81,9 @@ function DailyActivity(props) {
   )
 }
 
-DailyActivity.propTypes = {
-  data: PropTypes.object,
+/*DailyActivity.propTypes = {
+  data: PropTypes.array,
   loading: PropTypes.bool
-}
+}*/
 
 export default DailyActivity

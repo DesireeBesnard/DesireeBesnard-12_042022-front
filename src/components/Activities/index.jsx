@@ -5,7 +5,7 @@ import './style.css'
 
 /**
  * Returns type of activity by radar chart
- * @param { object } props 
+ * @param { array } props 
  * @param { object } props.data 
  * @param { boolean } props.loading - loading status
  * @returns { HTMLElement }
@@ -59,10 +59,10 @@ function Activities(props) {
 }
 
 
-Activities.propTypes = {
-    data: PropTypes.object,
+/*Activities.propTypes = {
+    data: PropTypes.array,
     loading: PropTypes.bool
-}
+}*/
 
 
 export default Activities

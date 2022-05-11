@@ -56,7 +56,7 @@ function Score(props) {
 }
 
 Score.propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.array,
     loading: PropTypes.bool
 }
 

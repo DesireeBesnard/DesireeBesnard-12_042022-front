@@ -60,3 +60,11 @@ export const ActivityCustomTooltip = ({ active, payload }) => {
       }
       return null
 }
+
+
+
+export const formatKeyData = (data) => {
+    let formatData = {}
+    formatData.data = data
+    return formatData
+}

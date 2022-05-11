@@ -87,9 +87,9 @@ function AverageSessions(props) {
 }
 
 
-AverageSessions.propTypes = {
+/*AverageSessions.propTypes = {
   data: PropTypes.object,
   loading: PropTypes.bool
-}
+}*/
 
 export default AverageSessions
