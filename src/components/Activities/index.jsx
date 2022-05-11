@@ -15,14 +15,9 @@ function Activities(props) {
 
     
     if (props.loading === false) {
-        data = props.data.data.data
+        data = props.data
     }
 
-    for (let i = 0; i < data.length; i++) {
-        const activity = data[i]
-        activity.kind = props.data.data.kind[Object.keys(props.data.data.kind)[i]]
-        
-    }
 
     return (
         <ResponsiveContainer 

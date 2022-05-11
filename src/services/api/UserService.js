@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {formatActivity, formatAverageSessions, formatScore,  formatKeyData } from '../../services/format.js'
+import {formatActivity, formatAverageSessions,formatActivities, formatScore,  formatKeyData } from '../../services/format.js'
 
 
 /**
@@ -31,51 +31,6 @@ export async function getMainData(id) {
     }
 }
 
-/**
- * @description Send request to get today's goal completion using axios api (a changer)
- * @param { string } id - user id
- * @return { Promise }
- * @return { Promise.resolve< object > } response.data
- * @return { Promise.reject< array > } []
- */
- export async function getTodayScore(id) {
-
-    try {
-        const response = await axios.get(`http://localhost:3000/user/${id}`);
-        //console.log(response.data)
-        const formatResponse = formatScore(response.data.data.todayScore)
-        console.log(formatResponse)
-        return formatResponse;
-    } catch (error) {
-        if( error.response.status === 404) {
-            window.location.href = "/error"
-        }
-        return [];
-    }
-}
-
-
-/**
- * @description Send request to get calories, proteins, carbohydrates and fats infos using axios api
- * @param { string } id - user id
- * @return { Promise }
- * @return { Promise.resolve< object > } response.data
- * @return { Promise.reject< array > } []
- */
- export async function getKeyData(id) {
-
-    try {
-        const response = await axios.get(`http://localhost:3000/user/${id}`);
-        const formatResponse = formatKeyData(response.data.data.keyData)
-        return formatResponse;
-    } catch (error) {
-        if( error.response.status === 404) {
-            window.location.href = "/error"
-        }
-        return [];
-    }
-}
-
 
 /**
  * @description Send request to get daily activity data (weight and calories burned) using axios api
@@ -89,8 +44,7 @@ export async function getActivity(id) {
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}/activity`);
         //console.log('activity  ', response.data)
-        const formatResponse = formatActivity(response.data.data.sessions)
-        return formatResponse;
+        return formatActivity(response.data.data.sessions)
     } catch (error) {
         if( error.response.status === 404) {
             window.location.href = "/error"
@@ -112,8 +66,7 @@ export async function getAverageSessions(id) {
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}/average-sessions`);
         //console.log( response.data)
-        const formatResponse = formatAverageSessions(response.data.data.sessions)
-        return formatResponse;
+        return formatAverageSessions(response.data.data.sessions);
     } catch (error) {
         if( error.response.status === 404) {
             window.location.href = "/error"
@@ -134,8 +87,8 @@ export async function getUserActivities(id) {
 
     try {
         const response = await axios.get(`http://localhost:3000/user/${id}/performance`);
-        //console.log('response  ', response.data)
-        return response.data;
+        //console.log(response.data)
+        return formatActivities(response.data.data);
     } catch (error) {
         if( error.response.status === 404) {
             window.location.href = "/error"

@@ -1,4 +1,8 @@
-
+/**
+ * Formats data for DailyActivity component
+ * @param { array } data 
+ * @returns { object }
+ */
 export const formatActivity = data => {
   let formatData = {}
 
@@ -40,8 +44,11 @@ export const ActivityCustomTooltip = ({ active, payload }) => {
 }
 
 
-
-
+/**
+ * Formats data for AverageSession component
+ * @param { array } data 
+ * @returns { array }
+ */
 export const formatAverageSessions = data => {
   const days = ["L", "M", "M", "J", "V", "S", "D"]
 
@@ -73,10 +80,26 @@ export const AverageSessionsCustomTooltip = ({ active, payload }) => {
 }
 
 
+/**
+ * Formats data for Activities component
+ * @param { object } data 
+ * @returns { array }
+ */
+export const formatActivities = data => {
+  let dataArray = data.data
+  for (let i = 0; i < dataArray.length; i++) {
+    const activity = dataArray[i]
+    activity.kind = data.kind[Object.keys(data.kind)[i]]  
+  }
+  return data.data
+}
 
 
-
-
+/**
+ * Formats data for TodayScore component
+ * @param { number } data 
+ * @returns { array }
+ */
 export const formatScore = data => {
     let formatData = []
     let datum = {data: data, fill:"#ff0000"}
@@ -97,14 +120,12 @@ export const ScoreCustomLegend = props => {
 }
 
 
-
-
-
-
-
-
-
-export const formatKeyData = (data) => {
+/**
+ * Formats data for Nutrients component
+ * @param { object } data 
+ * @returns { object }
+ */
+export const formatKeyData = data => {
     let formatData = {}
     formatData.data = data
     return formatData

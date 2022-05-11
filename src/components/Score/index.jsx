@@ -19,7 +19,7 @@ function Score(props) {
     let data
 
 
-    if(props.loading === false) {
+    if (props.loading === false) {
         data = props.data
     }
 
