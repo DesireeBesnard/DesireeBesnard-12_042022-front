@@ -14,21 +14,3 @@
     return data
   }
   
-  export const AverageSessionsCustomLegend = () => {
-    return (
-      <div className='averageSessLegend'>
-        <p>Durée moyenne des <br />sessions</p>
-      </div>
-    )
-  }
-  
-  export const AverageSessionsCustomTooltip = ({ active, payload }) => {
-    if (active) {
-      return (
-        <div className='tooltip averageSessTooltip'>
-          <p>{payload[0].payload.sessionLength}min</p>
-        </div>
-      )
-    }
-    return null
-  }

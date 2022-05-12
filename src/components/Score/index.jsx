@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
-import { ScoreCustomLegend } from '../../services/format/scoreFormat'
 import './style.css'
 
 
@@ -14,6 +13,16 @@ import './style.css'
 function Score(props) {
 
     let data
+
+    const ScoreCustomLegend = props => {
+        const {payload} = props
+        return(
+          <div className='scoreLegend'>
+            <p>Score</p>
+            <p><span>{payload[0].payload.value*100}%</span><br/>de votre <br/> objectif</p>
+          </div>
+        )
+    }
 
 
     if (props.loading === false) {
